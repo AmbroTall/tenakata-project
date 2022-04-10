@@ -1,0 +1,136 @@
+{% extends "index.html" %}
+{% block title %}Tenakata University{% endblock %}
+{% block content %}
+{% load static %}
+<style>
+    .home-container{
+    height: 90vh;
+    background-image: url("{% static 'images/banner2.jpg' %}");
+    background-size: cover;
+
+    }
+
+    .btnu{
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    }
+
+    label{
+    color: teal;
+    font-weight: bold;
+    }
+
+    .content-container div{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     border-radius: 10px;
+     background: black;
+    }
+
+    .button_enroll{
+    background: teal;
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+    text-decoration: unset;
+    }
+
+    .button_enroll:hover{
+    background: crimson;
+    color: #fff;
+    }
+
+    h1{
+    font-size: 52px;
+    }
+
+    @media(max-width: 1080px){
+    h1{
+    font-size: 48px;
+    margin-bottom: 15px;
+    }
+    p{
+    font-size: 20px;
+    margin-bottom: 15px;
+    }
+    .button_enroll{
+    font-size: 20px;
+    display: flex;
+    justify-content: start;
+    }
+    .content-container div{
+     display: flex;
+     flex-direction: column;
+     justify-content: start;
+     align-items: start;
+     border-radius: 10px;
+     background: black;
+    }
+    }
+
+
+
+    @media(max-width: 680px){
+    h1{
+    font-size: 25px;
+    }
+    p{
+    font-size: 12px;
+    }
+    .button_enroll{
+    font-size: 12px;
+    display: flex;
+    justify-content: start;
+    }
+    .content-container div{
+     display: flex;
+     flex-direction: column;
+     justify-content: start;
+     align-items: start;
+     border-radius: 10px;
+     background: black;
+    }
+    }
+
+    @media(max-width: 350px){
+    h1{
+    font-size: 25px;
+    margin-bottom: 15px;
+    }
+    p{
+    font-size: 12px;
+    margin-bottom: 25px;
+    }
+    .button_enroll{
+    font-size: 12px;
+    display: flex;
+    justify-content: start;
+    }
+    .content-container div{
+     display: flex;
+     flex-direction: column;
+     justify-content: start;
+     align-items: start;
+     border-radius: 10px;
+     background: black;
+    }
+    }
+
+
+
+</style>
+
+<div class="home-container">
+    <div class="content-container d-flex align-items-center justify-content-center h-100 ">
+        <div class="content text-white p-5 ">
+            <h1 class="text-white">Welcome to <span style="color: crimson">Tena</span><span style="color:teal">kata</span> University</h1>
+            <P style="color: teal;"><i>"Setting Trends in Higher Education, Research, Innovation and Entrepreneurship"</i></P>
+            <a href="{% url 'tenakata:register_page' %}" class="button_enroll btn-lg animate__animated animate__bounceIn text-white">Enroll now</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

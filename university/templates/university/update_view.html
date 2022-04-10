@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+{% block title %}Update{% endblock %}
+{% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+<style>
+    .form-container{
+    width: 800px;
+    }
+
+    .form-group{
+    margin-bottom: 30px;
+    }
+
+    .btnu{
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    }
+
+    label{
+    color: teal;
+    font-weight: bold;
+    font-size: 18px;
+    }
+
+
+    .btn:hover{
+    background: teal;
+    color: black;
+    }
+
+
+</style>
+
+<div class="container form-container">
+    <h1 class="mt-3 mb-3 text-center">Update <span style="font-weight: 400; font-style: italic">{{ object.name }}</span> details</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" id="btn-reg" class="btn btn-danger mt-3 btnu">Update</button>
+    </form>
+</div>
+
+{% endblock %}

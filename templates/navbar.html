@@ -1,0 +1,59 @@
+<style>
+	img{
+	height: 40px;
+	width: 40px;
+	padding-right: 5px;
+	}
+
+
+	.add-link{
+	font-weight: bold;
+	display: flex;
+	background: teal;
+	padding: 10px;
+	border-radius: 5px;
+
+	}
+
+
+	.add-link small:hover{
+	color: silver;
+	}
+
+	.list-view{
+	padding-left: 4px;
+	}
+	.bi bi-file:hover{
+	color: silver;
+	}
+
+	@media(max-width: 680px){
+	.topnav{
+    width: 100%;
+    }
+    .list-view{
+    font-size: 14px;
+    }
+    }
+
+    @media(max-width: 300px){
+    .topnav{
+    width: 100%;
+    }
+    .list-view{
+    font-size: 12px;
+    }
+    }
+
+
+
+
+</style>
+
+<nav class="topnav navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
+	{% load static %}
+	<div class="container">
+		<a class="navbar-brand d-flex align-items-center" href="{% url 'tenakata:homepage' %}"><img src="{% static 'images/logo.jpg' %}" /><strong class="d-none d-sm-block">TENAKATA_UNI</strong></a>
+		<a class="navbar-brand text-light  add-link" href="{% url 'tenakata:list_page' %}"><i class="bi bi-file-earmark-text"></i><small class="list-view d-flex align-items-center">View Admission List</small></a>
+	</div>
+</nav>
